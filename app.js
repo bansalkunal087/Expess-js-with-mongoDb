@@ -48,14 +48,15 @@ app.use(function (err, req, res, next) {
 });
 
 
-db.connect('mongodb://localhost:27017/mydatabase', function (err) {
+db.connect('mongodb://localhost:27017/kunal', function (err) {
     if (err) {
         console.log('Unable to connect to Mongo.')
         process.exit(1)
     } else {
-        app.listen(3000, function () {
-            console.log('Listening on port 3000...')
-        })
+        // app.listen(3000, function () {
+           
+        // })
+        
     }
 })
 
