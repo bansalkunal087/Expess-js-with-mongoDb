@@ -1,12 +1,23 @@
 var express = require('express');
 var router = express.Router();
-var db =  require('../index');
+var db = require('../index');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
 
     console.log(db.get());
-  res.send(db.get().myCollection.find());
+
+       
+                db.get().collection('myCollection').find({
+                            'x': 1
+                        }).toArray(function (err, docs) {
+                            console.log(docs);
+                            res.send(docs);
+                        }); //end collection.find 
+                    
+                //end db.collection
+            
+       
 });
 
 module.exports = router;
